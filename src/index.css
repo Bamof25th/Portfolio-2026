@@ -920,6 +920,12 @@ img {
   transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
 }
 
+/* An odd card count leaves the last one alone in a half-width column; let it
+   span the row instead. grid-auto-rows keeps it the same height as the rest. */
+.feat-card:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
 .feat-card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow);

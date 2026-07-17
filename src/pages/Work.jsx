@@ -59,6 +59,21 @@ const PROJECTS = [
     flip: true,
     altMedia: true,
   },
+  {
+    eyebrow: 'DEVELOPER Q&A PLATFORM · LIVE',
+    title: 'CodeOverflow',
+    bullets: [
+      'A Stack Overflow for coders — ask a question, post answers, vote on what helped, and save the good ones to a collection.',
+      'Rich TinyMCE editor with Prism-highlighted code blocks, plus tag pages, global search, community profiles and a jobs board.',
+      'GitHub sign-in through NextAuth v5, MongoDB behind Mongoose, and every mutation running as a Next.js server action.',
+    ],
+    tags: ['Next.js 14', 'TypeScript', 'MongoDB', 'NextAuth v5', 'shadcn/ui', 'Tailwind CSS'],
+    links: [
+      { href: 'https://code-overflow-nu.vercel.app/', label: 'Try it live ↗' },
+      { href: 'https://github.com/Bamof25th/codeOverflow', label: 'Code on GitHub ↗' },
+    ],
+    img: { src: '/uploads/codeoverflow.png', alt: 'CodeOverflow — developer Q&A platform', pos: '50% 0%' },
+  },
 ]
 
 const TIMELINE = [

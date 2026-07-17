@@ -40,6 +40,13 @@ const FEATURED = [
     img: { src: '/uploads/pasted-1784205205971-0.png', alt: 'MdToPdf — Markdown to PDF converter', pos: '50% 0%' },
     alt: true,
   },
+  {
+    eyebrow: 'DEVELOPER Q&A · LIVE',
+    title: 'CodeOverflow',
+    body: 'A Stack Overflow for coders — questions, answers, votes and tags, with a rich editor and syntax-highlighted code blocks.',
+    tags: ['Next.js 14', 'TypeScript', 'MongoDB', 'NextAuth'],
+    img: { src: '/uploads/codeoverflow.png', alt: 'CodeOverflow — developer Q&A platform', pos: '50% 0%' },
+  },
 ]
 
 const BRING = [
