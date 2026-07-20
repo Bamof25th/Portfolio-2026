@@ -47,6 +47,14 @@ const FEATURED = [
     tags: ['Next.js 14', 'TypeScript', 'MongoDB', 'NextAuth'],
     img: { src: '/uploads/codeoverflow.png', alt: 'CodeOverflow — developer Q&A platform', pos: '50% 0%' },
   },
+  {
+    eyebrow: 'FULL-STACK · OPEN SOURCE',
+    title: 'MangaVerse',
+    body: 'A full-stack manga reader on the MangaDex API — a clean vertical reader with bookmarks and history, on a stateless Spring Boot backend with Redis + RTK Query caching.',
+    tags: ['Spring Boot 3', 'React 18', 'TypeScript', 'Redis', 'Docker'],
+    img: { src: '/uploads/mangaverse.png', alt: 'MangaVerse — full-stack manga reading platform', pos: '50% 0%' },
+    alt: true,
+  },
 ]
 
 const BRING = [

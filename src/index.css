@@ -1346,7 +1346,7 @@ img {
 
 .cs-head h2 {
   font-family: 'Bricolage Grotesque', sans-serif;
-  font-size: 38px;
+  font-size: clamp(28px, 6vw, 38px);
   font-weight: 800;
   letter-spacing: -0.01em;
   margin: 14px 0 0;
@@ -1358,7 +1358,7 @@ img {
 
 .cs-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr));
   gap: 20px;
   align-items: stretch;
 }
@@ -1371,6 +1371,9 @@ img {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  /* Let the card shrink inside the grid so the contribution graph scrolls
+     within its own container instead of forcing the card wider. */
+  min-width: 0;
 }
 
 .cs-card--lc {
@@ -1410,7 +1413,7 @@ img {
 
 .cs-big {
   font-family: 'Bricolage Grotesque', sans-serif;
-  font-size: 42px;
+  font-size: clamp(26px, 6vw, 42px);
   font-weight: 800;
   color: var(--a);
   margin: 0;
@@ -1461,9 +1464,9 @@ img {
 }
 
 .cs-stats {
-  display: flex;
-  gap: 38px;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(10px, 4vw, 38px);
 }
 
 .cs-stats p:last-child {
@@ -1767,8 +1770,8 @@ a.detail-val:hover {
     grid-template-columns: 1fr;
   }
 
-  .cs-stats {
-    gap: 24px;
+  .cs-card {
+    padding: 22px 20px;
   }
 
   .feat-grid {

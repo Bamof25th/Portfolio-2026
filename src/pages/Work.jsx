@@ -74,6 +74,20 @@ const PROJECTS = [
     ],
     img: { src: '/uploads/codeoverflow.png', alt: 'CodeOverflow — developer Q&A platform', pos: '50% 0%' },
   },
+  {
+    eyebrow: 'FULL-STACK MANGA READER · OPEN SOURCE',
+    title: 'MangaVerse',
+    bullets: [
+      'A full-stack manga reader on top of the MangaDex API — browse, search and read in a clean vertical reader, with bookmarks, history and resume-where-you-left-off.',
+      'Stateless by design: the Spring Boot backend only resolves manga, chapter and image URLs, while the browser streams page images straight from MangaDex’s CDN — so it scales horizontally behind JWT auth.',
+      'Dual-layer caching — Redis on the server, RTK Query on the client — keeps it fast, all packaged with Docker Compose and nginx.',
+    ],
+    tags: ['Java 17', 'Spring Boot 3', 'Redis', 'MySQL', 'React 18', 'TypeScript', 'Redux Toolkit', 'Docker'],
+    links: [{ href: 'https://github.com/Bamof25th/Mangaverse', label: 'Code on GitHub ↗' }],
+    img: { src: '/uploads/mangaverse.png', alt: 'MangaVerse — full-stack manga reading platform', pos: '50% 0%' },
+    flip: true,
+    altMedia: true,
+  },
 ]
 
 const TIMELINE = [
