@@ -20,7 +20,7 @@ export default function Contact() {
     <main ref={pageRef} className="page">
       <section className="page-intro" data-anim="hero">
         <p className="kicker">CONTACT</p>
-        <h1>Say hello.</h1>
+        <h1>Say <span className="serif-accent">hello.</span></h1>
         <p>Roles, projects, or a question about something I built — I read everything.</p>
       </section>
 

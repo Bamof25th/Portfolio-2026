@@ -1,5 +1,5 @@
-import { useEffect, useRef } from 'react'
-import { Link, NavLink } from 'react-router-dom'
+import { useEffect, useRef, useState } from 'react'
+import { Link, NavLink, useLocation } from 'react-router-dom'
 import gsap from 'gsap'
 import { prefersReducedMotion } from '../lib/motion.js'
 
@@ -7,6 +7,8 @@ const navLinkClass = ({ isActive }) => (isActive ? 'nav-link active' : 'nav-link
 
 export default function Navbar({ theme, onToggleTheme }) {
   const navRef = useRef(null)
+  const { pathname } = useLocation()
+  const [overHero, setOverHero] = useState(pathname === '/')
 
   useEffect(() => {
     if (prefersReducedMotion()) return
@@ -15,9 +17,22 @@ export default function Navbar({ theme, onToggleTheme }) {
     return () => tween.revert()
   }, [])
 
+  // On home, the nav floats over the dark cinematic hero — go transparent/white
+  // there, then settle into the solid pill as the hero scrolls away.
+  useEffect(() => {
+    if (pathname !== '/') {
+      setOverHero(false)
+      return
+    }
+    const onScroll = () => setOverHero(window.scrollY < window.innerHeight * 0.85)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [pathname])
+
   return (
     <header className="site-header">
-      <nav ref={navRef} className="nav">
+      <nav ref={navRef} className={overHero ? 'nav nav--over-hero' : 'nav'}>
         <Link to="/" className="nav-brand">
           aniket<span className="dot">.</span>
         </Link>

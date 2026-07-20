@@ -14,7 +14,7 @@ const PROJECTS = [
     tags: ['6 languages', 'Client-side PDF', 'No sign-up', '100% private'],
     links: [{ href: 'https://parichays.in/', label: 'Visit parichays.in ↗' }],
     note: '· source private',
-    img: { src: '/uploads/pasted-1784205132923-0.png', alt: 'Parichay — marriage biodata studio', pos: '0% 30%' },
+    img: { src: '/uploads/parichay.webp', alt: 'Parichay — marriage biodata studio', pos: '0% 30%' },
   },
   {
     eyebrow: 'AI STUDY TOOL · OPEN SOURCE',
@@ -55,7 +55,7 @@ const PROJECTS = [
       { href: 'https://md-to-pdf-alpha.vercel.app/', label: 'Try it live ↗' },
       { href: 'https://github.com/Bamof25th/MdToPdf', label: 'Code on GitHub ↗' },
     ],
-    img: { src: '/uploads/pasted-1784205205971-0.png', alt: 'MdToPdf — Markdown to PDF converter', pos: '50% 0%' },
+    img: { src: '/uploads/mdtopdf.webp', alt: 'MdToPdf — Markdown to PDF converter', pos: '50% 0%' },
     flip: true,
     altMedia: true,
   },
@@ -72,7 +72,7 @@ const PROJECTS = [
       { href: 'https://code-overflow-nu.vercel.app/', label: 'Try it live ↗' },
       { href: 'https://github.com/Bamof25th/codeOverflow', label: 'Code on GitHub ↗' },
     ],
-    img: { src: '/uploads/codeoverflow.png', alt: 'CodeOverflow — developer Q&A platform', pos: '50% 0%' },
+    img: { src: '/uploads/codeoverflow.webp', alt: 'CodeOverflow — developer Q&A platform', pos: '50% 0%' },
   },
   {
     eyebrow: 'FULL-STACK MANGA READER · OPEN SOURCE',
@@ -84,7 +84,7 @@ const PROJECTS = [
     ],
     tags: ['Java 17', 'Spring Boot 3', 'Redis', 'MySQL', 'React 18', 'TypeScript', 'Redux Toolkit', 'Docker'],
     links: [{ href: 'https://github.com/Bamof25th/Mangaverse', label: 'Code on GitHub ↗' }],
-    img: { src: '/uploads/mangaverse.png', alt: 'MangaVerse — full-stack manga reading platform', pos: '50% 0%' },
+    img: { src: '/uploads/mangaverse.webp', alt: 'MangaVerse — full-stack manga reading platform', pos: '50% 0%' },
     flip: true,
     altMedia: true,
   },
@@ -117,7 +117,7 @@ function ProjectMedia({ p }) {
   return (
     <div className={p.altMedia ? 'proj-media proj-media--alt' : 'proj-media'}>
       {p.img ? (
-        <img src={p.img.src} alt={p.img.alt} style={{ objectPosition: p.img.pos }} />
+        <img src={p.img.src} alt={p.img.alt} loading="lazy" decoding="async" style={{ objectPosition: p.img.pos }} />
       ) : (
         <div className="slot">{p.slot}</div>
       )}
@@ -157,7 +157,7 @@ export default function Work() {
     <main ref={pageRef} className="page">
       <section className="page-intro" data-anim="hero">
         <p className="kicker">SELECTED PROJECTS + EXPERIENCE</p>
-        <h1>Work</h1>
+        <h1><span className="serif-accent">Work</span></h1>
         <p>
           Recent projects — built end to end, from data model to UI — plus where I've been along
           the way.

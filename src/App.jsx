@@ -1,11 +1,14 @@
-import { useEffect, useState } from 'react'
+import { Suspense, lazy, useEffect, useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Navbar from './components/Navbar.jsx'
 import Footer from './components/Footer.jsx'
 import Home from './pages/Home.jsx'
-import Work from './pages/Work.jsx'
-import About from './pages/About.jsx'
-import Contact from './pages/Contact.jsx'
+
+// Home is the landing page, so it ships in the main bundle. The rest are
+// split into their own chunks and fetched on navigation.
+const Work = lazy(() => import('./pages/Work.jsx'))
+const About = lazy(() => import('./pages/About.jsx'))
+const Contact = lazy(() => import('./pages/Contact.jsx'))
 
 export default function App() {
   const [theme, setTheme] = useState(() => localStorage.getItem('ab-theme') || 'light')
@@ -24,12 +27,14 @@ export default function App() {
   return (
     <>
       <Navbar theme={theme} onToggleTheme={toggleTheme} />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/work" element={<Work />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
+      <Suspense fallback={<div className="page" style={{ minHeight: '70vh' }} aria-busy="true" />}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/work" element={<Work />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </Suspense>
       <Footer />
     </>
   )

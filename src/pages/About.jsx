@@ -67,7 +67,7 @@ export default function About() {
       <section className="about-hero">
         <div data-anim="hero">
           <p className="kicker">ABOUT ME</p>
-          <h1>Happiest when the whole system clicks.</h1>
+          <h1>Happiest when the whole system <span className="serif-accent">clicks.</span></h1>
           <div className="hero-copy">
             <p>
               I'm Aniket — a software engineer in Bengaluru. The moment I'm chasing is when a system
@@ -98,8 +98,9 @@ export default function About() {
           <div className="portrait-frame" data-anim-frame="1">
             <img
               data-parallax="1"
-              src="/uploads/2024-12-28%2016.14.55.jpg"
+              src="/uploads/about-portrait.webp"
               alt="Aniket in a kurta"
+              decoding="async"
             />
           </div>
           <div className="portrait-badge" data-anim-badge="1">
@@ -168,7 +169,7 @@ export default function About() {
         </p>
         <div className="gallery" data-reveal-group="1">
           <div className="ph ph--tall" data-tilt="1">
-            <img src="/uploads/IMG_20211227_152906.jpg" alt="Fitting-room mirror selfie" />
+            <img src="/uploads/gallery-selfie.webp" alt="Fitting-room mirror selfie" loading="lazy" decoding="async" />
             <div className="ph-caption ph-caption--split">
               <p>The occasional selfie</p>
               <p className="ph-tag">FIT CHECK</p>
@@ -176,8 +177,10 @@ export default function About() {
           </div>
           <div className="ph ph--wide" data-tilt="1">
             <img
-              src="/uploads/DSC08761.JPG"
+              src="/uploads/gallery-crew.webp"
               alt="With the crew in Bengaluru"
+              loading="lazy"
+              decoding="async"
               style={{ objectPosition: '70% 10%' }}
             />
             <div className="ph-caption ph-caption--split">
@@ -186,13 +189,13 @@ export default function About() {
             </div>
           </div>
           <div className="ph" data-tilt="1">
-            <img src="/uploads/DSC_0413-01-01.jpeg" alt="College days" />
+            <img src="/uploads/gallery-college.webp" alt="College days" loading="lazy" decoding="async" />
             <div className="ph-caption">
               <p>College days</p>
             </div>
           </div>
           <div className="ph" data-tilt="1">
-            <img src="/uploads/2023-11-12%2022.16.13.jpg" alt="Diwali at home" />
+            <img src="/uploads/gallery-diwali.webp" alt="Diwali at home" loading="lazy" decoding="async" />
             <div className="ph-caption">
               <p>Diwali at home</p>
             </div>
@@ -208,8 +211,10 @@ export default function About() {
           </div>
           <div className="ph" data-tilt="1">
             <img
-              src="/uploads/2023-04-22%2018.28.35.jpg"
+              src="/uploads/gallery-wedding.webp"
               alt="Festive kurta portrait at a wedding venue"
+              loading="lazy"
+              decoding="async"
               style={{ objectPosition: '50% 30%' }}
             />
             <div className="ph-caption">

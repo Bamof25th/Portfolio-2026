@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { usePageMotion } from '../lib/motion.js'
+import CinematicHero from '../components/CinematicHero.jsx'
 
 const MARQUEE = 'JAVA  ·  SPRING BOOT  ·  REACT  ·  NEXT.JS  ·  TYPESCRIPT  ·  MONGODB  ·  POSTGRESQL  ·  MYSQL  ·  AWS  ·  JENKINS  ·  GIT  ·  '
 
@@ -15,7 +16,7 @@ const FEATURED = [
     title: 'Parichay',
     body: 'A marriage biodata studio — handcrafted templates in six Indian languages, a live preview, and free A4 PDFs that never leave the browser.',
     tags: ['6 languages', 'Client-side PDF', 'No sign-up'],
-    img: { src: '/uploads/pasted-1784205132923-0.png', alt: 'Parichay — marriage biodata studio', pos: '50% 20%' },
+    img: { src: '/uploads/parichay.webp', alt: 'Parichay — marriage biodata studio', pos: '50% 20%' },
   },
   {
     eyebrow: 'AI STUDY TOOL · OPEN SOURCE',
@@ -37,7 +38,7 @@ const FEATURED = [
     title: 'MdToPdf',
     body: 'Markdown in, polished multi-page PDFs out — with a live preview, .md uploads and proper formatting, entirely in the browser.',
     tags: ['Next.js 15', 'React 19', 'TypeScript', 'jsPDF'],
-    img: { src: '/uploads/pasted-1784205205971-0.png', alt: 'MdToPdf — Markdown to PDF converter', pos: '50% 0%' },
+    img: { src: '/uploads/mdtopdf.webp', alt: 'MdToPdf — Markdown to PDF converter', pos: '50% 0%' },
     alt: true,
   },
   {
@@ -45,14 +46,14 @@ const FEATURED = [
     title: 'CodeOverflow',
     body: 'A Stack Overflow for coders — questions, answers, votes and tags, with a rich editor and syntax-highlighted code blocks.',
     tags: ['Next.js 14', 'TypeScript', 'MongoDB', 'NextAuth'],
-    img: { src: '/uploads/codeoverflow.png', alt: 'CodeOverflow — developer Q&A platform', pos: '50% 0%' },
+    img: { src: '/uploads/codeoverflow.webp', alt: 'CodeOverflow — developer Q&A platform', pos: '50% 0%' },
   },
   {
     eyebrow: 'FULL-STACK · OPEN SOURCE',
     title: 'MangaVerse',
     body: 'A full-stack manga reader on the MangaDex API — a clean vertical reader with bookmarks and history, on a stateless Spring Boot backend with Redis + RTK Query caching.',
     tags: ['Spring Boot 3', 'React 18', 'TypeScript', 'Redis', 'Docker'],
-    img: { src: '/uploads/mangaverse.png', alt: 'MangaVerse — full-stack manga reading platform', pos: '50% 0%' },
+    img: { src: '/uploads/mangaverse.webp', alt: 'MangaVerse — full-stack manga reading platform', pos: '50% 0%' },
     alt: true,
   },
 ]
@@ -77,36 +78,10 @@ export default function Home() {
   const pageRef = usePageMotion()
 
   return (
-    <main ref={pageRef} className="page">
-      <section className="home-hero">
-        <div data-anim="hero">
-          <p className="kicker">SOFTWARE ENGINEER · BENGALURU</p>
-          <h1>
-            I build web apps that are easy to use — <span className="hl">and hard to break.</span>
-          </h1>
-          <p className="home-lede">
-            I'm <strong>Aniket Baghel</strong> — a full-stack engineer working across Spring Boot
-            microservices and React frontends. Lately: hardening login flows and shipping backend
-            modules for enterprise insurance at Sapiens.
-          </p>
-          <div className="btn-row">
-            <Link to="/work" className="btn-primary">See my work →</Link>
-            <Link to="/about" className="btn-ghost">More about me</Link>
-          </div>
-        </div>
-        <div className="portrait-wrap home-portrait" data-anim="portrait">
-          <div className="portrait-plate" data-anim-plate="1" />
-          <div className="portrait-frame" data-anim-frame="1">
-            <img data-parallax="1" src="/uploads/IMG_2595.jpg" alt="Aniket Baghel" />
-          </div>
-          <div className="portrait-badge" data-anim-badge="1">
-            <span className="dot" />
-            Spring Boot × React
-          </div>
-        </div>
-      </section>
-
-      <div className="marquee" data-reveal="rise">
+    <>
+      <CinematicHero />
+      <main ref={pageRef} className="page">
+        <div className="marquee" data-reveal="rise">
         <div className="marquee-track">
           <span>{MARQUEE}</span>
           <span>{MARQUEE}</span>
@@ -132,7 +107,7 @@ export default function Home() {
             <Link to="/work" className="feat-card" key={p.title}>
               <div className={p.alt ? 'feat-media feat-media--alt' : 'feat-media'}>
                 {p.img ? (
-                  <img src={p.img.src} alt={p.img.alt} style={{ objectPosition: p.img.pos }} />
+                  <img src={p.img.src} alt={p.img.alt} loading="lazy" decoding="async" style={{ objectPosition: p.img.pos }} />
                 ) : (
                   <div className="slot">{p.slot}</div>
                 )}
@@ -172,6 +147,7 @@ export default function Home() {
         </div>
         <Link to="/contact" className="cta-btn">Let's talk →</Link>
       </section>
-    </main>
+      </main>
+    </>
   )
 }

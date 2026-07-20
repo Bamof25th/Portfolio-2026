@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 /* ---------------------------------- theme ---------------------------------- */
 
 body {
@@ -88,6 +92,7 @@ img {
   border-radius: 999px;
   padding: 7px 8px;
   box-shadow: var(--shadow);
+  transition: background-color .3s ease, border-color .3s ease, box-shadow .3s ease;
 }
 
 .nav-brand {
@@ -1789,4 +1794,96 @@ a.detail-val:hover {
   .cta {
     padding: 36px 30px;
   }
+}
+
+/* ---------------------------- liquid glass (cinematic hero) ---------------------------- */
+
+.liquid-glass {
+  background: rgba(255, 255, 255, 0.01);
+  background-blend-mode: luminosity;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border: none;
+  box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.liquid-glass::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 1.4px;
+  background: linear-gradient(180deg,
+    rgba(255, 255, 255, 0.45) 0%, rgba(255, 255, 255, 0.15) 20%,
+    rgba(255, 255, 255, 0) 40%, rgba(255, 255, 255, 0) 60%,
+    rgba(255, 255, 255, 0.15) 80%, rgba(255, 255, 255, 0.45) 100%);
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+/* --------------------- editorial serif accent (echoes the hero) --------------------- */
+
+/* Instrument Serif italic, used on the emphasized word of page titles so the
+   whole site shares the cinematic hero's display voice. */
+.serif-accent {
+  font-family: 'Instrument Serif', serif;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: 0;
+  color: var(--a);
+}
+
+/* --------------------- nav over the cinematic hero --------------------- */
+
+/* Smooth the swap between the transparent over-hero state and the solid pill. */
+.nav-brand,
+.nav-link,
+.theme-btn {
+  transition: color .3s ease, background-color .3s ease, border-color .3s ease;
+}
+
+.nav--over-hero {
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-color: rgba(255, 255, 255, 0.22);
+  box-shadow: none;
+}
+
+.nav--over-hero .nav-brand,
+.nav--over-hero .nav-brand:hover {
+  color: #fff;
+}
+
+.nav--over-hero .nav-link {
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.nav--over-hero .nav-link:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.nav--over-hero .nav-link.active {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.nav--over-hero .theme-btn {
+  color: rgba(255, 255, 255, 0.85);
+  border-color: rgba(255, 255, 255, 0.25);
+}
+
+.nav--over-hero .theme-btn:hover {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.nav--over-hero .resume-btn {
+  background: #fff;
+  color: #182C41;
 }
