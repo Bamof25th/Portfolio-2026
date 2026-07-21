@@ -68,6 +68,17 @@ const FEATURED = [
       pos: "50% 0%",
     },
   },
+  {
+    eyebrow: "AI STUDY TOOL · OPEN SOURCE",
+    title: "LearnWithMe",
+    body: "Upload a PDF, get an AI-generated quiz — 20 random questions, instant scoring with solutions, and results you can download as a PDF.",
+    tags: ["Next.js 14", "MongoDB", "OpenAI API", "JWT"],
+    img: {
+      src: "/uploads/slot-learnwithme.webp",
+      alt: "LearnWithMe — AI-generated quiz from a PDF",
+    },
+    alt: true,
+  },
 ];
 
 const BRING = [
